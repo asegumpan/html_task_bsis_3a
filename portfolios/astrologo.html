@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Cedric | BSIS Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/preline@2.0.2/dist/preline.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            darkbg: '#090514',
+            brand: '#9333ea',
+          },
+          screens: {
+            'xs': '400px',   
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #090514; color: #cbd5e1; }
+    
+    /* Custom glow effects */
+    .glow-bg {
+      position: absolute;
+      background: radial-gradient(circle, rgba(147,51,234,0.15) 0%, rgba(9,5,20,0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(147, 51, 234, 0.4);
+      box-shadow: 0 0 20px rgba(147, 51, 234, 0.2);
+    }
+
+    /* Floating Animation for Avatar */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* Structural adjustments */
+    html, body { height: 100%; margin: 0; }
+  </style>
+</head>
+<body class="relative overflow-x-hidden antialiased selection:bg-purple-500 selection:text-white flex flex-col min-h-screen">
+
+  <div class="glow-bg top-[-5%] left-[10%] w-[150vw] h-[150vw] md:w-[600px] md:h-[600px] -translate-x-1/4"></div>
+  <div class="glow-bg top-[30%] right-[-10%] w-[150vw] h-[150vw] md:w-[600px] md:h-[600px] translate-x-1/4"></div>
+  <div class="glow-bg bottom-[-5%] left-[-10%] w-[150vw] h-[150vw] md:w-[600px] md:h-[600px] -translate-x-1/4"></div>
+
+  <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-darkbg/80 border-b border-white/5 py-3 sm:py-4">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      
+      <a href="#" class="text-xl xs:text-2xl sm:text-3xl font-bold text-white flex items-center gap-1 sm:gap-2 group">
+        <div class="font-mono text-purple-500 group-hover:text-purple-400 transition-colors drop-shadow-[0_0_8px_rgba(147,51,234,0.5)]">
+          <span>></span><span class="animate-pulse">_</span>
+        </div>
+        <span class="tracking-wide">C.</span>
+      </a>
+      
+      <div class="hidden md:flex gap-6 lg:gap-8 text-sm font-medium">
+        <a href="#about" class="hover:text-purple-400 transition px-2 py-1">About</a>
+        <a href="#experience" class="hover:text-purple-400 transition px-2 py-1">Experience</a>
+        <a href="#projects" class="hover:text-purple-400 transition px-2 py-1">Projects</a>
+        <a href="#contact-footer" class="hover:text-purple-400 transition px-2 py-1">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-2 xs:gap-3 md:hidden">
+        <a href="#contact-footer" class="text-xs xs:text-sm font-medium hover:text-purple-400 transition px-2 py-1 flex items-center">
+          <i class="fas fa-envelope mr-1.5"></i>
+          <span class="hidden xs:inline">Contact</span>
+        </a>
+        <button type="button" class="hs-collapse-toggle p-1.5 xs:p-2 rounded-lg border border-white/10 text-white hover:bg-white/5" data-hs-collapse="#mobile-menu" aria-expanded="false">
+          <i class="fas fa-bars text-base xs:text-lg"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="hs-collapse hidden md:hidden overflow-hidden transition-all duration-300 bg-darkbg/95 border-t border-white/5 mt-2">
+      <div class="flex flex-col space-y-3 px-6 py-4 text-base">
+        <a href="#about" class="hover:text-purple-400 transition py-2" onclick="document.querySelector('#mobile-menu').classList.add('hidden')">About</a>
+        <a href="#experience" class="hover:text-purple-400 transition py-2" onclick="document.querySelector('#mobile-menu').classList.add('hidden')">Experience</a>
+        <a href="#projects" class="hover:text-purple-400 transition py-2" onclick="document.querySelector('#mobile-menu').classList.add('hidden')">Projects</a>
+        <a href="#contact-footer" class="hover:text-purple-400 transition py-2" onclick="document.querySelector('#mobile-menu').classList.add('hidden')">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 md:pt-24 pb-16 sm:pb-20 md:pb-24">
+    
+    <section id="about" class="scroll-mt-24 flex flex-col items-center text-center mb-16 sm:mb-24 md:mb-32 relative">
+      <p class="text-xs sm:text-sm font-medium text-gray-400 mb-4 sm:mb-6">
+        catch me on <a href="#" class="text-purple-400 underline decoration-purple-500/30 underline-offset-4 hover:text-purple-300">GitHub</a>
+      </p>
+      
+      <div class="animate-float w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-900 p-1 mb-6 sm:mb-8 shadow-[0_0_30px_rgba(147,51,234,0.3)]">
+        <div class="w-full h-full bg-darkbg rounded-xl flex items-center justify-center text-3xl sm:text-4xl">
+          👨‍💻
+        </div>
+      </div>
+
+      <p class="text-purple-400 font-medium mb-2 tracking-wide text-xs sm:text-sm uppercase">Hi, my name is Cedric Astrologo</p>
+      
+      <h1 class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 tracking-tight leading-tight max-w-4xl mx-auto">
+        Bachelor of Science in <br class="hidden sm:block"> 
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400 inline-block mt-1 sm:mt-0">
+          Information Systems
+        </span>
+      </h1>
+      
+      <p class="max-w-[90%] sm:max-w-2xl text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed">
+        Specializing in crafting robust backend architectures and efficient web solutions. I focus on creating scalable systems that bridge the gap between complex data and seamless user experiences.
+      </p>
+    </section>
+
+    <section id="experience" class="scroll-mt-24 mb-16 sm:mb-24 md:mb-32">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-6 sm:mb-8">Technical Arsenal</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        
+        <div class="glass-card hover:-translate-y-1 rounded-xl sm:rounded-2xl p-5 sm:p-6 flex flex-row items-start gap-4">
+          <div class="w-12 h-12 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0 text-red-500 text-xl border border-red-500/20">
+            <i class="fab fa-laravel"></i>
+          </div>
+          <div>
+            <h3 class="text-white font-medium text-base sm:text-lg">Laravel</h3>
+            <p class="text-gray-400 text-xs sm:text-sm mt-1">MVC, migrations, routing.</p>
+          </div>
+        </div>
+
+        <div class="glass-card hover:-translate-y-1 rounded-xl sm:rounded-2xl p-5 sm:p-6 flex flex-row items-start gap-4">
+          <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0 text-blue-500 text-xl border border-blue-500/20">
+            <i class="fab fa-php"></i>
+          </div>
+          <div>
+            <h3 class="text-white font-medium text-base sm:text-lg">PHP & Livewire</h3>
+            <p class="text-gray-400 text-xs sm:text-sm mt-1">Dynamic interfaces.</p>
+          </div>
+        </div>
+
+        <div class="glass-card hover:-translate-y-1 rounded-xl sm:rounded-2xl p-5 sm:p-6 flex flex-row items-start gap-4">
+          <div class="w-12 h-12 rounded-lg bg-teal-500/10 flex items-center justify-center flex-shrink-0 text-teal-400 text-xl border border-teal-500/20">
+            <i class="fab fa-css3-alt"></i>
+          </div>
+          <div>
+            <h3 class="text-white font-medium text-base sm:text-lg">Tailwind CSS</h3>
+            <p class="text-gray-400 text-xs sm:text-sm mt-1">Utility-first designs.</p>
+          </div>
+        </div>
+
+        <div class="glass-card hover:-translate-y-1 rounded-xl sm:rounded-2xl p-5 sm:p-6 flex flex-row items-start gap-4">
+          <div class="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0 text-purple-400 text-xl border border-purple-500/20">
+            <i class="fas fa-server"></i>
+          </div>
+          <div>
+            <h3 class="text-white font-medium text-base sm:text-lg">Systems Analysis</h3>
+            <p class="text-gray-400 text-xs sm:text-sm mt-1">SLA, uptime metrics.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="mb-16 sm:mb-24 md:mb-40 flex flex-col items-center text-center relative px-4">
+      <p class="text-sm sm:text-base text-gray-300 mb-2">I'm currently looking to join a <span class="text-purple-400 font-medium border-b border-purple-500/30 pb-0.5">cross-functional</span> team</p>
+      <p class="text-xs sm:text-sm text-gray-500 mb-8 sm:mb-12">that values robust architecture and clean code.</p>
+      
+      <div class="relative w-20 h-20 sm:w-32 sm:h-32 flex items-center justify-center">
+        <div class="absolute inset-0 bg-purple-600 rounded-full mix-blend-screen filter blur-[30px] sm:blur-[40px] opacity-50 animate-pulse"></div>
+        <div class="relative w-10 h-10 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.5)]">
+          <i class="fas fa-code text-lg sm:text-2xl text-darkbg"></i>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="scroll-mt-24 space-y-16 sm:space-y-24 md:space-y-32">
+      
+      <div class="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-12 group">
+        <div class="flex-1 space-y-3 sm:space-y-4 relative z-10 w-full transition duration-300 lg:group-hover:-translate-y-2">
+          <p class="text-purple-400 text-xs font-semibold tracking-wider uppercase">Capstone Project</p>
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">Tourism Booking System</h3>
+          <div class="glass-card p-5 sm:p-6 rounded-xl sm:rounded-2xl">
+            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+              A comprehensive web-based platform engineered to streamline booking processes. Features include integrated mapping support to manage geographic tourism data efficiently, built using Laravel and tailored for scalable data management.
+            </p>
+          </div>
+          <div class="flex gap-4 pt-2">
+            <a href="#" class="text-gray-400 hover:text-white transition text-lg sm:text-xl"><i class="fab fa-github"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition text-lg sm:text-xl"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <div class="flex-1 relative w-full aspect-video rounded-xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(147,51,234,0.15)] lg:group-hover:-translate-y-2 transition duration-300">
+           <div class="absolute inset-0 bg-gray-800/50 flex items-center justify-center group-hover:scale-105 transition duration-500">
+             <i class="fas fa-map-marked-alt text-4xl sm:text-6xl text-purple-500/50"></i>
+           </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col lg:flex-row-reverse items-center gap-6 sm:gap-8 lg:gap-12 group">
+        <div class="flex-1 space-y-3 sm:space-y-4 relative z-10 w-full transition duration-300 lg:group-hover:-translate-y-2">
+          <p class="text-purple-400 text-xs font-semibold tracking-wider uppercase">Infrastructure Tools</p>
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">SLA & Uptime Analyzer</h3>
+          <div class="glass-card p-5 sm:p-6 rounded-xl sm:rounded-2xl">
+            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+              A technical reporting tool designed to calculate, monitor, and simplify Service Level Agreements. It evaluates system uptime metrics, translating complex OS theory data into readable, presentation-ready analytics.
+            </p>
+          </div>
+          <div class="flex gap-4 pt-2">
+            <a href="#" class="text-gray-400 hover:text-white transition text-lg sm:text-xl"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="flex-1 relative w-full aspect-video rounded-xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(147,51,234,0.15)] lg:group-hover:-translate-y-2 transition duration-300">
+           <div class="absolute inset-0 bg-gray-800/50 flex items-center justify-center group-hover:scale-105 transition duration-500">
+             <i class="fas fa-chart-line text-4xl sm:text-6xl text-purple-500/50"></i>
+           </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer id="contact-footer" class="border-t border-white/5 bg-darkbg/50 py-8 sm:py-12 w-full mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8 mb-8">
+        
+        <div class="max-w-md">
+          <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2">Let's connect</h2>
+          <p class="text-gray-400 text-xs sm:text-sm">
+            I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+          <a href="#" class="text-purple-400 hover:text-purple-300 font-medium text-sm sm:text-base break-all">
+            cedric@example.com
+          </a>
+          <div class="flex gap-4">
+            <a href="#" class="text-gray-500 hover:text-white transition text-xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="text-gray-500 hover:text-white transition text-xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="text-gray-500 hover:text-white transition text-xl" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs text-gray-600 border-t border-white/5 pt-6 gap-3 sm:gap-0">
+        <p class="order-2 sm:order-1">© 2026 Cedric · Bachelor of Science in Information Systems</p>
+        <p class="order-1 sm:order-2">Built with Tailwind & Preline · Fully responsive</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
