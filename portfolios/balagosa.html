@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christine Mae Balagosa Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/preline/dist/preline.js"></script>
+ 
+</head>
+
+<style>
+    body {
+        overflow-x: hidden;
+    }
+</style>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <h1 class="text-lg sm:text-xl md:text-2xl font-bold">
+                Portfolio
+            </h1>
+
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-blue-600">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-600">Skills</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
+            </nav>
+
+            <button class="md:hidden hs-collapse-toggle p-2 rounded-lg border" data-hs-collapse="#mobile-nav">
+                ☰
+            </button>
+
+        </div>
+        <div id="mobile-nav" class="hs-collapse hidden px-6 pb-4">
+            <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600">About</a>
+            <a href="#skills" class="block py-2 text-gray-600 hover:text-blue-600">Skills</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-blue-600">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="about" class="max-w-7xl mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+                    Welcome to <span class="text-blue-600">Christine Mae Balagosa's</span> Portfolio
+                </h1>
+                <p class="mt-4 text-gray-600 text-base sm:text-lg text-justify">
+                    Christine Mae Balagosa is a passionate and motivated student who is dedicated to learning and
+                    improving her skills in technology and digital creativity. She enjoys exploring web development,
+                    designing user-friendly interfaces, and creating projects that help solve real-world problems.
+                    Through continuous learning and collaboration, Christine aims to grow as a future IT professional
+                    and contribute meaningful solutions in the field of technology.
+                </p>
+                <div class="mt-6 flex flex-col sm:flex-row gap-3">
+
+                    <a href="#skills"
+                        class="px-6 py-3 text-sm font-medium rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-center">
+                        Skills & Interests
+                    </a>
+                    <a href="#contact"
+                        class="px-6 py-3 text-sm font-medium rounded-lg border border-gray-300 hover:bg-gray-100 text-center">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <div>
+                <img class="w-full h-auto rounded-xl object-cover"
+                    src="https://images.unsplash.com/photo-1665686377065-08ba896d16fd?auto=format&fit=crop&w=700&q=80"
+                    alt="Portfolio Image">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="max-w-7xl mx-auto px-6 py-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10">
+            Skills & Interests
+        </h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-semibold text-lg mb-2">Web Development</h3>
+                <p class="text-gray-600 text-sm">
+                    Christine enjoys creating responsive websites using HTML, CSS, Tailwind, and modern web tools.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-semibold text-lg mb-2">UI Design</h3>
+                <p class="text-gray-600 text-sm">
+                    She is interested in designing simple, clean, and user-friendly digital interfaces.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-semibold text-lg mb-2">Problem Solving</h3>
+                <p class="text-gray-600 text-sm">
+                    Christine enjoys analyzing problems and building systems that make processes easier and more
+                    efficient.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-semibold text-lg mb-2">Team Collaboration</h3>
+                <p class="text-gray-600 text-sm">
+                    She values teamwork and believes collaboration leads to better solutions and learning.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-semibold text-lg mb-2">Continuous Learning</h3>
+                <p class="text-gray-600 text-sm">
+                    Christine is committed to continuously improving her knowledge and skills in technology.
+                </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-semibold text-lg mb-2">Creative Thinking</h3>
+                <p class="text-gray-600 text-sm">
+                    She enjoys turning ideas into functional and creative digital solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="max-w-7xl mx-auto px-6 py-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10">
+            Contact Information
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+            <!-- Image -->
+            <div class="flex justify-center md:justify-start">
+                <img class="rounded-xl w-full max-w-md"
+                    src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=560" alt="Contact">
+            </div>
+
+            <!-- Contact Details -->
+            <div class="space-y-6 text-center md:text-left">
+
+                <div>
+                    <p class="text-gray-500 text-sm">Email</p>
+                    <p class="font-medium">christinebalagosa@email.com</p>
+                </div>
+
+                <div>
+                    <p class="text-gray-500 text-sm">Phone</p>
+                    <p class="font-medium">+63 955 496 3085</p>
+                </div>
+
+                <div>
+                    <p class="text-gray-500 text-sm">Location</p>
+                    <p class="font-medium">Philippines</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+        <p>© 2026 Christine Mae Balagosa Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
